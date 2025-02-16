@@ -22,3 +22,18 @@ spring:
     property-naming-strategy: SNAKE_CASE
     serialization:
       fail-on-empty-beans: false
+
+cloud:
+  aws:
+    s3:
+      bucket: ${BUCKET_NAME}
+      post-images : ${POST_IMAGES_FOLDER}
+      preview-images : ${PREVIEW_IMAGES_FOLDER}
+      profile-images: ${PROFILE_IMAGES_FOLDER}
+    region:
+      static: ${AWS_REGION}
+    stack:
+      auto: false
+    credentials:
+      access-key: ${AWS_ACCESS_KEY_ID}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
