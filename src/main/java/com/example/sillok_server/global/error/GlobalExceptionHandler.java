@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
                         .status(errorCode.getStatus())
                         .message(errorCode.getMessage())
                         .build(),
-                HttpStatus.valueOf(errorCode.getStatus())
+                HttpStatus.valueOf(errorCode.getStatus().value())
         );
     }
 
