@@ -2,8 +2,6 @@ package com.example.sillok_server.domain.post.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
