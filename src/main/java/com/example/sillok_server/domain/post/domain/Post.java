@@ -1,0 +1,44 @@
+package com.example.sillok_server.domain.post.domain;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDate;
+
+@Entity
+@Getter
+@Builder
+@Table(name = "tbl_post")
+@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 30)
+    private String title;
+
+    @Column(nullable = false)
+    private String link;
+
+    private String imageUrl;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Major major;
+
+    @CreatedDate
+    @Column(nullable = false ,updatable = false)
+    private LocalDate createdAt;
+
+    @Column(nullable = false)
+    private boolean isApproved;
+
+}
