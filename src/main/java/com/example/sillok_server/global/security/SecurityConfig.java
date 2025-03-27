@@ -3,6 +3,7 @@ package com.example.sillok_server.global.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -28,7 +29,7 @@ public class SecurityConfig {
             .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/post/**").permitAll()
+                .requestMatchers(HttpMethod.POST,"/post").permitAll()
                 .anyRequest().authenticated())
             .build();
     }
