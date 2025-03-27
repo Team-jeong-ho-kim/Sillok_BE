@@ -42,7 +42,7 @@ public class S3Service {
                         .contentType(file.getContentType())
                         .build());
 
-        return key;
+        return s3Properties.url() + "/" + key;
     }
 
     public void deleteImage(String imageUrl) {
