@@ -33,7 +33,7 @@ public class Post {
     private Major major;
 
     @CreatedDate
-    @Column(nullable = false ,updatable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDate createdAt;
 
     @Column(nullable = false)
