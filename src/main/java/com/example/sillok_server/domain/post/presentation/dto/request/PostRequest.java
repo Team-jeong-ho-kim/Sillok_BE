@@ -4,21 +4,18 @@ import com.example.sillok_server.domain.post.domain.Major;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@Getter
-@NoArgsConstructor
-public class PostRequest {
+public record PostRequest(
 
     @NotBlank
     @Size(max = 30)
-    private String title;
+    String title,
 
     @NotBlank
-    private String link;
+    String link,
 
     @NotNull
-    private Major major;
+    Major major
 
+) {
 }
