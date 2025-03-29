@@ -9,6 +9,7 @@ public record S3Properties(
         String secretKey,
         String postImages,
         String previewImages,
-        String profileImages
+        String profileImages,
+        String url
 ) {
 }

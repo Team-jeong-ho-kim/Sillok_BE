@@ -30,6 +30,7 @@ cloud:
       post-images : ${POST_IMAGES_FOLDER}
       preview-images : ${PREVIEW_IMAGES_FOLDER}
       profile-images: ${PROFILE_IMAGES_FOLDER}
+      url: ${S3_URL}
     region:
       static: ${AWS_REGION}
     stack:

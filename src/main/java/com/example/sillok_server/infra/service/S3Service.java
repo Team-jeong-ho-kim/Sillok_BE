@@ -29,9 +29,7 @@ public class S3Service {
     private final S3Operations s3Operations;
 
     public String uploadImage(MultipartFile file, FolderType folderType) throws IOException {
-        String fileName = file.getOriginalFilename();
-        validate(fileName);
-
+        String fileName = validate(file);
         String key = generateKey(fileName, folderType);
 
         s3Operations.upload(
@@ -42,7 +40,7 @@ public class S3Service {
                         .contentType(file.getContentType())
                         .build());
 
-        return key;
+        return s3Properties.url() + "/" + key;
     }
 
     public void deleteImage(String imageUrl) {
@@ -50,15 +48,22 @@ public class S3Service {
         s3Operations.deleteObject(s3Properties.bucket(), key);
     }
 
-    private void validate(String fileName) {
-        if (fileName == null || fileName.isEmpty()) {
+    private String validate(MultipartFile file) {
+        if (file == null || file.isEmpty()) {
             throw ImageNotFoundException.EXCEPTION;
+        }
+
+        String fileName = file.getOriginalFilename();
+        if (fileName == null || fileName.isEmpty()) {
+            throw InvalidImageException.EXCEPTION;
         }
 
         String extension = getExtension(fileName);
         if (!IMAGE_EXTENSIONS.contains(extension)) {
             throw InvalidImageException.EXCEPTION;
         }
+
+        return fileName;
     }
 
     private String generateKey(String originalFilename, FolderType folderType) {

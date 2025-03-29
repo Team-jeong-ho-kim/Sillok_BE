@@ -1,5 +1,7 @@
 package com.example.sillok_server.global.error;
 
+import com.example.sillok_server.global.error.exception.ErrorCode;
+import com.example.sillok_server.global.error.exception.SillokException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;

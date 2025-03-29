@@ -1,5 +1,7 @@
 package com.example.sillok_server.global.error;
 
+import com.example.sillok_server.global.error.exception.ErrorCode;
+import com.example.sillok_server.global.error.exception.SillokException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
