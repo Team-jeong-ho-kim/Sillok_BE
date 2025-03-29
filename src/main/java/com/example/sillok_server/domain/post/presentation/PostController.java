@@ -20,7 +20,7 @@ public class PostController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestPart(name = "request") @Valid PostRequest request,
-                           @RequestPart(name = "image", required = false) MultipartFile image) throws IOException {
+                           @RequestPart(name = "image") MultipartFile image) {
         createPostService.execute(request, image);
     }
 
