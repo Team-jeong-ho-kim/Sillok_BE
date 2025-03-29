@@ -26,6 +26,7 @@ public class Post {
     @Column(nullable = false)
     private String link;
 
+    @Column(nullable = false)
     private String imageUrl;
 
     @Column(nullable = false)
