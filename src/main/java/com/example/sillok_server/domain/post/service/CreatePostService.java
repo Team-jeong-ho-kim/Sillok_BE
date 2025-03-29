@@ -24,7 +24,7 @@ public class CreatePostService {
     public void execute(PostRequest request, MultipartFile image) {
         String imageUrl = null;
         try {
-            imageUrl = s3Service.uploadImage(image, FolderType.PREVIEW_IMAGES);
+            imageUrl = s3Service.uploadImage(image, FolderType.POST_IMAGES);
         } catch (IOException e) {
             throw InvalidImageException.EXCEPTION;
         }
