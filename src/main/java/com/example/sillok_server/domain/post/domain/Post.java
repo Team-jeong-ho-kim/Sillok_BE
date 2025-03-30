@@ -19,7 +19,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, columnDefinition = "VARCHAR(30)")
     private String title;
 
     @Column(nullable = false)
