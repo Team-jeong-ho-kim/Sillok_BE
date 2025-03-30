@@ -33,7 +33,7 @@ public class CreatePostService {
                 .title(request.title())
                 .link(request.link())
                 .imageUrl(imageUrl)
-                .major(request.major())
+                .category(request.category())
                 .isApproved(false)
             .build());
     }

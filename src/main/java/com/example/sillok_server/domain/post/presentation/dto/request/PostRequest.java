@@ -1,6 +1,6 @@
 package com.example.sillok_server.domain.post.presentation.dto.request;
 
-import com.example.sillok_server.domain.post.domain.Major;
+import com.example.sillok_server.domain.post.domain.Category;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -15,7 +15,7 @@ public record PostRequest(
     String link,
 
     @NotNull
-    Major major
+    Category category
 
 ) {
 }

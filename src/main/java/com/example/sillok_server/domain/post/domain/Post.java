@@ -31,7 +31,7 @@ public class Post {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Major major;
+    private Category category;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
