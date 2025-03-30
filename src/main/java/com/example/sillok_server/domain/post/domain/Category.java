@@ -1,6 +1,6 @@
 package com.example.sillok_server.domain.post.domain;
 
-public enum Major {
+public enum Category {
     BACKEND,
     FRONTEND,
     DESIGN,
@@ -10,5 +10,9 @@ public enum Major {
     FLUTTER,
     EMBEDDED,
     DEVOPS,
-    SECURITY
+    SECURITY,
+    MEMOIRS,
+    SELF_DEV,
+    ALGORITHM,
+    ETC
 }
