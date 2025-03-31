@@ -1,4 +1,4 @@
-package com.example.sillok_server.global.error;
+package com.example.sillok_server.global.error.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

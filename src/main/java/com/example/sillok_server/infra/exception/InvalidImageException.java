@@ -1,7 +1,7 @@
 package com.example.sillok_server.infra.exception;
 
-import com.example.sillok_server.global.error.ErrorCode;
-import com.example.sillok_server.global.error.SillokException;
+import com.example.sillok_server.global.error.exception.ErrorCode;
+import com.example.sillok_server.global.error.exception.SillokException;
 
 public class InvalidImageException extends SillokException {
 
