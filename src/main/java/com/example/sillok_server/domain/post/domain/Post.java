@@ -25,7 +25,7 @@ public class Post {
     @Column(nullable = false)
     private String link;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(150)")
     private String imageUrl;
 
     @Column(nullable = false)
