@@ -1,31 +1,28 @@
-name: dev branch auto ci process script
+name: Deploy to EC2
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # main 브랜치에 푸시될 때 실행
 
 jobs:
   deploy:
-    name: deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: excuting remote ssh commands
-        uses: appleboy/ssh-action@v0.1.6
+      - name: 코드 체크아웃
+        uses: actions/checkout@v3
+
+      - name: EC2 서버에 배포
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_IP }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
-            # 기존 폴더 삭제 후 새로 클론
-            rm -rf /home/ubuntu/Server-V2
-            git clone -b main https://github.com/Team-jeong-ho-kim/Sillok_BE.git /home/ubuntu/Server-V2
-
-            cd /home/ubuntu/Server-V2
-            npm install --force
-            npm run build || exit 1
-
-            pm2 stop all || true
-            pm2 delete all || true
-            pm2 start dist/main.js
+            cd ~/your-app-folder
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart all
