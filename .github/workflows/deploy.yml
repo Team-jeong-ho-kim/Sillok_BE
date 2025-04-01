@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.REMOTE_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
-            cd ~/your-app-folder
+            cd /home/ubuntu/Sillok_BE
             git pull origin main
             npm install
             npm run build
