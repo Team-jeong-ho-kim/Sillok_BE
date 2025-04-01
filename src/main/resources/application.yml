@@ -15,6 +15,12 @@ spring:
         format_sql: true
     show-sql: true
 
+  jwt:
+    secretKey: ${JWT_SECRET}
+    header: ${HEADER}
+    prefix: ${PREFIX}
+    accessExp: ${ACCESS_EXP}
+
   main:
     allow-bean-definition-overriding: true
 
