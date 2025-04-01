@@ -18,17 +18,14 @@ jobs:
           key: ${{ secrets.REMOTE_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
-            # 서버에 프로젝트 디렉토리 없으면 클론
-            if [ ! -d "/home/ubuntu/Server-V2" ]; then
-              git clone https://github.com/Team-jeong-ho-kim/Sillok_BE.git /home/ubuntu/Server-V2
-            fi
+            # 기존 폴더 삭제 후 새로 클론
+            rm -rf /home/ubuntu/Server-V2
+            git clone -b main https://github.com/Team-jeong-ho-kim/Sillok_BE.git /home/ubuntu/Server-V2
 
             cd /home/ubuntu/Server-V2
-            git pull origin dev
             npm install --force
-            npm run build
+            npm run build || exit 1
 
-            # PM2 프로세스 삭제 후 재시작
             pm2 stop all || true
             pm2 delete all || true
             pm2 start dist/main.js
