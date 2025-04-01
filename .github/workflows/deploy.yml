@@ -21,8 +21,8 @@ jobs:
           key: ${{ secrets.REMOTE_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_SSH_PORT }}
           script: |
+            # EC2 서버로 이동
             cd /home/ubuntu/Sillok_BE
             git pull origin main
-            npm install
-            npm run build
-            pm2 restart all
+            ./gradlew clean build
+            java -jar build/libs/sillok-be-1.0-SNAPSHOT.jar
