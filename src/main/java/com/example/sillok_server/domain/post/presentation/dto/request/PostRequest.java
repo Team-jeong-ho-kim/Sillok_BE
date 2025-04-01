@@ -1,6 +1,6 @@
 package com.example.sillok_server.domain.post.presentation.dto.request;
 
-import com.example.sillok_server.domain.post.domain.Category;
+import com.example.sillok_server.domain.post.domain.enums.Category;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

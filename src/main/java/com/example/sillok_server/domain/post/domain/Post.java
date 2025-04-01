@@ -1,5 +1,6 @@
 package com.example.sillok_server.domain.post.domain;
 
+import com.example.sillok_server.domain.post.domain.enums.Category;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

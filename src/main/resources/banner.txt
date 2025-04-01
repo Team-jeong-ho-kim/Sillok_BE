@@ -5,4 +5,4 @@ ${AnsiColor.MAGENTA} _____  _____  _      _      _____  _   __
 /\__/ / _| |_ | |____| |____\ \_/ /| |\  \
 \____/  \___/ \_____/\_____/ \___/ \_| \_/
 ${AnsiColor.BRIGHT_GREEN}대덕SW고의 위대한 모든 기록
-${AnsiColor.BRIGHT_WHITE}Team Daedong : 10기 민수아, 박태수
+${AnsiColor.BRIGHT_WHITE}Team Daedong : 10기 박태수, 민수아

@@ -1,4 +1,4 @@
-package com.example.sillok_server.domain.post.domain;
+package com.example.sillok_server.domain.post.domain.enums;
 
 public enum Category {
     BACKEND,
