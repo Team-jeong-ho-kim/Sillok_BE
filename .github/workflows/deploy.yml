@@ -25,4 +25,4 @@ jobs:
             git pull origin main
             chmod +x ./gradlew
             ./gradlew clean build -x test  # 테스트 제외
-            java -jar build/libs/sillok-be-1.0-SNAPSHOT.jar
+            java -jar build/libs/Sillok_server-0.0.1-SNAPSHOT.jar
