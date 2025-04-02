@@ -10,6 +10,14 @@ public enum ErrorCode {
 
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error"),
 
+    // jwt
+    INVALID_JWT(HttpStatus.UNAUTHORIZED, "Invalid JWT"),
+    EXPIRED_JWT(HttpStatus.UNAUTHORIZED, "Expired JWT"),
+
+    // user
+    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User Not Found"),
+    PASSWORD_MISMATCH(HttpStatus.UNAUTHORIZED, "Password Mismatch"),
+
     // image
     IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "Image Not Found"),
     INVALID_IMAGE(HttpStatus.BAD_REQUEST, "Invalid Image"),
