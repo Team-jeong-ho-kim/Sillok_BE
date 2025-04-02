@@ -17,7 +17,7 @@ public class User {
     @Column(nullable = false, columnDefinition = "VARCHAR(10)")
     private String accountId;
 
-    @Column(nullable = false, columnDefinition = "CHAR(60)")
+    @Column(nullable = false, columnDefinition = "VARCHAR(20)")
     private String password;
 
 }
