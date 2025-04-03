@@ -2,9 +2,6 @@ package com.example.sillok_server.domain.post.presentation;
 
 import com.example.sillok_server.domain.post.presentation.dto.request.PostRequest;
 import com.example.sillok_server.domain.post.service.CreatePostService;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Encoding;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
