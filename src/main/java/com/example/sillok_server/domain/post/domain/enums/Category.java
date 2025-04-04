@@ -11,6 +11,8 @@ public enum Category {
     EMBEDDED,
     DEVOPS,
     SECURITY,
+    DATABASE,
+    NETWORK,
     MEMOIRS,
     SELF_DEV,
     ALGORITHM,
