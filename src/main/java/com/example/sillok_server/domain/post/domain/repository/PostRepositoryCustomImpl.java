@@ -27,6 +27,7 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
             ))
             .from(post)
             .where(post.isApproved.eq(true))
+            .orderBy(post.createdAt.desc())
             .fetch();
     }
 
@@ -42,6 +43,7 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
             ))
             .from(post)
             .where(post.category.eq(category).and(post.isApproved.eq(true)))
+            .orderBy(post.createdAt.desc())
             .fetch();
     }
 
