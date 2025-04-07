@@ -18,7 +18,7 @@ public interface AuthControllerDocs {
         @ApiResponse(responseCode = "200", description = "로그인 성공!!!!!!", content = @Content(schema = @Schema(implementation = TokenResponse.class))),
         @ApiResponse(responseCode = "401", description = "비밀번호 틀렸다잉", content = @Content),
         @ApiResponse(responseCode = "400", description = "형식이 잘못됐어!!!!!!!!!", content = @Content),
-        @ApiResponse(responseCode = "500", description = "내탓이다...", content = @Content)
+        @ApiResponse(responseCode = "500", description = "서버 탓이다...", content = @Content)
     })
     TokenResponse login(@RequestBody AuthRequest request);
 
