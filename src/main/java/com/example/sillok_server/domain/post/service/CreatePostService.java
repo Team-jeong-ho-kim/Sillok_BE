@@ -31,6 +31,7 @@ public class CreatePostService {
 
         postRepository.save(Post.builder()
                 .title(request.title())
+                .introduction(request.introduction())
                 .link(request.link())
                 .imageUrl(imageUrl)
                 .category(request.category())

@@ -23,6 +23,9 @@ public class Post {
     @Column(nullable = false, columnDefinition = "VARCHAR(50)")
     private String title;
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(30)")
+    private String introduction;
+
     @Column(nullable = false)
     private String link;
 
