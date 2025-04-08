@@ -2,17 +2,19 @@ package com.example.sillok_server.domain.post.presentation.dto.request;
 
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public record PostRequest(
 
     @NotBlank
-    @Size(max = 30)
+    @Size(max = 50)
     @Schema(description = "추천글 제목")
     String title,
+
+    @Null
+    @Size(max = 30)
+    @Schema(description = "추천글 소개")
+    String introduction,
 
     @NotBlank
     @Schema(description = "추천할 글의 링크")

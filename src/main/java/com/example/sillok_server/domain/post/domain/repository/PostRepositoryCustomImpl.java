@@ -21,6 +21,7 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
             .select(new QPostResponse(
                 post.id,
                 post.title,
+                post.introduction,
                 post.imageUrl,
                 post.category,
                 post.createdAt
@@ -37,6 +38,7 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
             .select(new QPostResponse(
                 post.id,
                 post.title,
+                post.introduction,
                 post.imageUrl,
                 post.category,
                 post.createdAt
