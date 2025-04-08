@@ -11,7 +11,6 @@ public record PostRequest(
     @Schema(description = "추천글 제목")
     String title,
 
-    @Null
     @Size(max = 30)
     @Schema(description = "추천글 소개")
     String introduction,
