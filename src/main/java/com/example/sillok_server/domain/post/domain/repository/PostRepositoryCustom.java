@@ -11,4 +11,6 @@ public interface PostRepositoryCustom {
 
     List<PostResponse> findAllByCategoryAndIsApprovedTrue(Category category);
 
+    List<PostResponse> findAllByIsApprovedFalse();
+
 }

@@ -38,4 +38,13 @@ public interface PostControllerDocs {
     @Parameter(name = "category", description = "조회할 카테고리 선택")
     List<PostResponse> queryPosts(Category category);
 
+    @Operation(summary = "어드민 글 전체 조회", description = "아직 수락되지 않은 글을 전체조회하는 api 입니당~")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "글 조회 성공!!"),
+        @ApiResponse(responseCode = "403", description = "글 조회 권한이 없어요..", content = @Content),
+        @ApiResponse(responseCode = "404", description = "글을 찾을 수 없어요..", content = @Content),
+        @ApiResponse(responseCode = "500", description = "서버 잘못이다...", content = @Content)
+    })
+    List<PostResponse> adminQueryPosts();
+
 }

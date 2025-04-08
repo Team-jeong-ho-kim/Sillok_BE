@@ -49,4 +49,21 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
             .fetch();
     }
 
+    @Override
+    public List<PostResponse> findAllByIsApprovedFalse() {
+        return queryFactory
+            .select(new QPostResponse(
+                post.id,
+                post.title,
+                post.introduction,
+                post.imageUrl,
+                post.category,
+                post.createdAt
+            ))
+            .from(post)
+            .where(post.isApproved.eq(false))
+            .orderBy(post.createdAt.desc())
+            .fetch();
+    }
+
 }
