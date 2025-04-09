@@ -47,4 +47,13 @@ public interface PostControllerDocs {
     })
     List<PostResponse> adminQueryPosts();
 
+    @Operation(summary = "어드민 글 수락", description = "추천글이 공개되기 전 어드민의 수락을 거치는데, 어드민이 글을 수락하는 api입니당~")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "204", description = "글이 수락됨!!"),
+        @ApiResponse(responseCode = "403", description = "글 수락 권한이 없어요.."),
+        @ApiResponse(responseCode = "404", description = "해당 글을 찾을 수 없어요.."),
+        @ApiResponse(responseCode = "500", description = "서버 잘못이다...")
+    })
+    void adminApprovedPost(Long postId);
+
 }
