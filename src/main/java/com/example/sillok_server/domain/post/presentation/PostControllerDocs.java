@@ -54,6 +54,6 @@ public interface PostControllerDocs {
         @ApiResponse(responseCode = "404", description = "해당 글을 찾을 수 없어요.."),
         @ApiResponse(responseCode = "500", description = "서버 잘못이다...")
     })
-    void adminApprovedPost(Long postId);
+    void adminApprovePost(Long postId);
 
 }

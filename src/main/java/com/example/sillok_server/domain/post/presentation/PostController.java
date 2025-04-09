@@ -48,7 +48,7 @@ public class PostController implements PostControllerDocs {
 
     @PatchMapping("/admin/{post-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void adminApprovedPost(@PathVariable("post-id") Long postId) {
+    public void adminApprovePost(@PathVariable("post-id") Long postId) {
         adminApprovePostService.execute(postId);
     }
 
