@@ -21,7 +21,7 @@ public class AdminApprovePostService {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> PostNotFoundException.EXCEPTION);
 
-        post.approved();
+        post.approve();
     }
 
 }

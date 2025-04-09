@@ -43,4 +43,8 @@ public class Post {
     @Column(nullable = false)
     private boolean isApproved;
 
+    public void approve() {
+        this.isApproved = true;
+    }
+
 }
