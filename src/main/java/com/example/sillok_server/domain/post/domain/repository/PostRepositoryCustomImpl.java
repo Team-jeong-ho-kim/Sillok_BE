@@ -3,7 +3,7 @@ package com.example.sillok_server.domain.post.domain.repository;
 import com.example.sillok_server.domain.post.domain.QPost;
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import com.example.sillok_server.domain.post.dto.response.PostResponse;
-import com.example.sillok_server.domain.post.presentation.dto.response.QPostResponse;
+import com.example.sillok_server.domain.post.dto.response.QPostResponse;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
