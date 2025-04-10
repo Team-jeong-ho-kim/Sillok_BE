@@ -1,8 +1,8 @@
-package com.example.sillok_server.domain.post.presentation;
+package com.example.sillok_server.domain.post.common.controller;
 
 import com.example.sillok_server.domain.post.domain.enums.Category;
-import com.example.sillok_server.domain.post.presentation.dto.request.PostRequest;
-import com.example.sillok_server.domain.post.presentation.dto.response.PostResponse;
+import com.example.sillok_server.domain.post.dto.request.PostRequest;
+import com.example.sillok_server.domain.post.dto.response.PostResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

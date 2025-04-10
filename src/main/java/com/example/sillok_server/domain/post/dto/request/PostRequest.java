@@ -1,4 +1,4 @@
-package com.example.sillok_server.domain.post.presentation.dto.request;
+package com.example.sillok_server.domain.post.dto.request;
 
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import io.swagger.v3.oas.annotations.media.Schema;

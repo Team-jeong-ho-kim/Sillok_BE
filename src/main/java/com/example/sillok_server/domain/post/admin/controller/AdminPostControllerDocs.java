@@ -1,6 +1,6 @@
-package com.example.sillok_server.domain.post.presentation.admin;
+package com.example.sillok_server.domain.post.admin.controller;
 
-import com.example.sillok_server.domain.post.presentation.dto.response.PostResponse;
+import com.example.sillok_server.domain.post.dto.response.PostResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -29,5 +29,14 @@ public interface AdminPostControllerDocs {
         @ApiResponse(responseCode = "500", description = "서버 잘못이다...")
     })
     void adminApprovePost(Long postId);
+
+    @Operation(summary = "어드민 글 삭제", description = "어드민이 글을 삭제하는 api입니당~")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "204", description = "글 삭제 성공!!"),
+        @ApiResponse(responseCode = "403", description = "글 삭제 권한이 없어요.."),
+        @ApiResponse(responseCode = "404", description = "글을 찾을 수 없어요.."),
+        @ApiResponse(responseCode = "500", description = "서버 잘못이다...")
+    })
+    void adminDeletePost(Long postId);
 
 }
