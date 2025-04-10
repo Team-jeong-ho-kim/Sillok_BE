@@ -3,10 +3,7 @@ package com.example.sillok_server.domain.post.presentation;
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import com.example.sillok_server.domain.post.presentation.dto.request.PostRequest;
 import com.example.sillok_server.domain.post.presentation.dto.response.PostResponse;
-import com.example.sillok_server.domain.post.service.AdminQueryPostsService;
-import com.example.sillok_server.domain.post.service.CreatePostService;
-import com.example.sillok_server.domain.post.service.QueryPostsByCategoryService;
-import com.example.sillok_server.domain.post.service.QueryPostsService;
+import com.example.sillok_server.domain.post.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,7 +21,6 @@ public class PostController implements PostControllerDocs {
     private final CreatePostService createPostService;
     private final QueryPostsService queryPostsService;
     private final QueryPostsByCategoryService queryPostsByCategoryService;
-    private final AdminQueryPostsService adminQueryPostsService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
@@ -40,12 +36,6 @@ public class PostController implements PostControllerDocs {
             return queryPostsByCategoryService.execute(category);
         }
         return queryPostsService.execute();
-    }
-
-    @GetMapping("/admin")
-    @ResponseStatus(HttpStatus.OK)
-    public List<PostResponse> adminQueryPosts() {
-        return adminQueryPostsService.execute();
     }
 
 }
