@@ -21,8 +21,6 @@ public class PostController implements PostControllerDocs {
     private final CreatePostService createPostService;
     private final QueryPostsService queryPostsService;
     private final QueryPostsByCategoryService queryPostsByCategoryService;
-    private final AdminQueryPostsService adminQueryPostsService;
-    private final AdminApprovePostService adminApprovePostService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
@@ -38,18 +36,6 @@ public class PostController implements PostControllerDocs {
             return queryPostsByCategoryService.execute(category);
         }
         return queryPostsService.execute();
-    }
-
-    @GetMapping("/admin")
-    @ResponseStatus(HttpStatus.OK)
-    public List<PostResponse> adminQueryPosts() {
-        return adminQueryPostsService.execute();
-    }
-
-    @PatchMapping("/admin/{post-id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void adminApprovePost(@PathVariable("post-id") Long postId) {
-        adminApprovePostService.execute(postId);
     }
 
 }
