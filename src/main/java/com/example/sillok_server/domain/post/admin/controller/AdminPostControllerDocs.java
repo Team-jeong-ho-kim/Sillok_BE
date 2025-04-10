@@ -1,6 +1,6 @@
-package com.example.sillok_server.domain.post.presentation.admin;
+package com.example.sillok_server.domain.post.admin.controller;
 
-import com.example.sillok_server.domain.post.presentation.dto.response.PostResponse;
+import com.example.sillok_server.domain.post.dto.response.PostResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

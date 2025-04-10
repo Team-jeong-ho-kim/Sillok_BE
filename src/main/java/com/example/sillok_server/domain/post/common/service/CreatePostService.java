@@ -1,8 +1,8 @@
-package com.example.sillok_server.domain.post.service;
+package com.example.sillok_server.domain.post.common.service;
 
 import com.example.sillok_server.domain.post.domain.Post;
 import com.example.sillok_server.domain.post.domain.repository.PostRepository;
-import com.example.sillok_server.domain.post.presentation.dto.request.PostRequest;
+import com.example.sillok_server.domain.post.dto.request.PostRequest;
 import com.example.sillok_server.infra.exception.InvalidImageException;
 import com.example.sillok_server.infra.service.S3Service;
 import com.example.sillok_server.infra.type.FolderType;

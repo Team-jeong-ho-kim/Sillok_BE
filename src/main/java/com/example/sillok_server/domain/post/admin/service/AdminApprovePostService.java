@@ -1,4 +1,4 @@
-package com.example.sillok_server.domain.post.service;
+package com.example.sillok_server.domain.post.admin.service;
 
 import com.example.sillok_server.domain.post.domain.Post;
 import com.example.sillok_server.domain.post.domain.repository.PostRepository;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class AdminDeletePostService {
+public class AdminApprovePostService {
 
     private final PostRepository postRepository;
     private final UserFacade userFacade;
@@ -19,9 +19,9 @@ public class AdminDeletePostService {
     public void execute(Long postId) {
         userFacade.getCurrentUser();
         Post post = postRepository.findById(postId)
-                .orElseThrow(() -> PostNotFoundException.EXCEPTION);
+            .orElseThrow(() -> PostNotFoundException.EXCEPTION);
 
-        postRepository.delete(post);
+        post.approve();
     }
 
 }

@@ -1,9 +1,9 @@
-package com.example.sillok_server.domain.post.presentation.admin;
+package com.example.sillok_server.domain.post.admin.controller;
 
-import com.example.sillok_server.domain.post.presentation.dto.response.PostResponse;
-import com.example.sillok_server.domain.post.service.AdminApprovePostService;
-import com.example.sillok_server.domain.post.service.AdminDeletePostService;
-import com.example.sillok_server.domain.post.service.AdminQueryPostsService;
+import com.example.sillok_server.domain.post.dto.response.PostResponse;
+import com.example.sillok_server.domain.post.admin.service.AdminApprovePostService;
+import com.example.sillok_server.domain.post.admin.service.AdminDeletePostService;
+import com.example.sillok_server.domain.post.admin.service.AdminQueryPostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

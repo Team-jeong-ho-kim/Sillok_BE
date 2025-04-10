@@ -1,27 +1,25 @@
-package com.example.sillok_server.domain.post.service;
+package com.example.sillok_server.domain.post.admin.service;
 
-import com.example.sillok_server.domain.post.domain.Post;
 import com.example.sillok_server.domain.post.domain.repository.PostRepository;
-import com.example.sillok_server.domain.post.exception.PostNotFoundException;
+import com.example.sillok_server.domain.post.dto.response.PostResponse;
 import com.example.sillok_server.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
-public class AdminApprovePostService {
+public class AdminQueryPostsService {
 
     private final PostRepository postRepository;
     private final UserFacade userFacade;
 
-    @Transactional
-    public void execute(Long postId) {
+    @Transactional(readOnly = true)
+    public List<PostResponse> execute() {
         userFacade.getCurrentUser();
-        Post post = postRepository.findById(postId)
-            .orElseThrow(() -> PostNotFoundException.EXCEPTION);
-
-        post.approve();
+        return postRepository.findAllByIsApprovedFalse();
     }
 
 }
