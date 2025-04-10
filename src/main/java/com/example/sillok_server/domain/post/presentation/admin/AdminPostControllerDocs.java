@@ -30,4 +30,13 @@ public interface AdminPostControllerDocs {
     })
     void adminApprovePost(Long postId);
 
+    @Operation(summary = "어드민 글 삭제", description = "어드민이 글을 삭제하는 api입니당~")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "204", description = "글 삭제 성공!!"),
+        @ApiResponse(responseCode = "403", description = "글 삭제 권한이 없어요.."),
+        @ApiResponse(responseCode = "404", description = "글을 찾을 수 없어요.."),
+        @ApiResponse(responseCode = "500", description = "서버 잘못이다...")
+    })
+    void adminDeletePost(Long postId);
+
 }
