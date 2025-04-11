@@ -19,7 +19,7 @@ public class QueryPostLinkService {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> PostNotFoundException.EXCEPTION);
 
-        return PostLinkResponse.builder().link(post.getLink()).build();
+        return new PostLinkResponse(post.getLink());
     }
 
 }
