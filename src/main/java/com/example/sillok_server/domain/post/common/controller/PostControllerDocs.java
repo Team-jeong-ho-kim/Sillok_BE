@@ -2,6 +2,7 @@ package com.example.sillok_server.domain.post.common.controller;
 
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import com.example.sillok_server.domain.post.dto.request.PostRequest;
+import com.example.sillok_server.domain.post.dto.response.PostLinkResponse;
 import com.example.sillok_server.domain.post.dto.response.PostResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -37,5 +38,13 @@ public interface PostControllerDocs {
         @ApiResponse(responseCode = "500", description = "서버 잘못이다...", content = @Content)})
     @Parameter(name = "category", description = "조회할 카테고리 선택")
     List<PostResponse> queryPosts(Category category);
+
+    @Operation(summary = "글 링크 조회", description = "글 링크를 조회하는 api입니당~")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "글 링크 조회 성공!!"),
+        @ApiResponse(responseCode = "404", description = "해당하는 글을 찾을 수 없어요..", content = @Content),
+        @ApiResponse(responseCode = "500", description = "서버 잘못이다...", content = @Content)
+    })
+    PostLinkResponse queryLink(Long postId);
 
 }
