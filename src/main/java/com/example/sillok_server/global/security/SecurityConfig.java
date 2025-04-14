@@ -51,7 +51,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedMethods(List.of("GET", "POST"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PATCH", "DELETE"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedOrigins(List.of("https://sillok-api.xquare.app", "http://localhost:8080", "http://localhost:4200"));
         configuration.setAllowedHeaders(List.of("*"));
