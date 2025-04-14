@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 public record PostLinkResponse(
 
-    @Schema(description = "포스트 링크")
+    @Schema(name = "link", description = "포스트 링크")
     String link
 
 ) {

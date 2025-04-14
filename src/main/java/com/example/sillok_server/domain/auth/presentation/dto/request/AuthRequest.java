@@ -8,12 +8,12 @@ public record AuthRequest(
 
     @NotBlank
     @Size(max = 10)
-    @Schema(description = "계정 아이디")
+    @Schema(name = "account_id", description = "계정 아이디")
     String accountId,
 
     @NotBlank
     @Size(max = 20)
-    @Schema(description = "계정 비밀번호")
+    @Schema(name = "password", description = "계정 비밀번호")
     String password
 
 ) {

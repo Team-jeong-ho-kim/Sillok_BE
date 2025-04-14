@@ -8,10 +8,10 @@ import java.time.ZonedDateTime;
 @Builder
 public record TokenResponse(
 
-    @Schema(description = "액세스 토큰")
+    @Schema(name = "access_token", description = "액세스 토큰")
     String accessToken,
 
-    @Schema(description = "만료 기간")
+    @Schema(name = "exp", description = "만료 기간")
     ZonedDateTime exp
 ) {
 }
