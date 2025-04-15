@@ -29,6 +29,7 @@ public class SecurityConfig {
 
     private final JwtTokenProvider jwtTokenProvider;
     private final ObjectMapper objectMapper;
+    private final CorsProperties corsProperties;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -59,8 +60,7 @@ public class SecurityConfig {
 
         configuration.setAllowedMethods(List.of("GET", "POST", "PATCH", "DELETE"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedOrigins(List.of("https://sillok-api.xquare.app", "http://localhost:8080",
-                        "http://localhost:4200", "https://sillok-admin.ncloud.sbs", "https://sillok.ncloud.sbs"));
+        configuration.setAllowedOrigins(corsProperties.allowedOrigins());
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setExposedHeaders(List.of("*"));
 
