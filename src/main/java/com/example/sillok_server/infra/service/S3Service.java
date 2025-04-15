@@ -23,7 +23,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class S3Service {
 
-    private final Set<String> IMAGE_EXTENSIONS = Set.of(".jpg", ".jpeg", ".png", ".gif");
+    private final Set<String> IMAGE_EXTENSIONS = Set.of(".jpg", ".jpeg", ".png", ".gif", ".webp");
 
     private final S3Properties s3Properties;
     private final S3Operations s3Operations;
