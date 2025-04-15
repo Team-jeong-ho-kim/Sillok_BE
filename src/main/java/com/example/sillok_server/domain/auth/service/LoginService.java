@@ -10,6 +10,7 @@ import com.example.sillok_server.global.error.exception.SillokException;
 import com.example.sillok_server.global.security.jwt.JwtProperties;
 import com.example.sillok_server.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,13 +24,14 @@ public class LoginService {
     private final UserRepository userRepository;
     private final JwtProperties jwtProperties;
     private final JwtTokenProvider jwtTokenProvider;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true)
     public TokenResponse execute(AuthRequest request) {
         User user = userRepository.findByAccountId(request.accountId())
             .orElseThrow(() -> new SillokException(ErrorCode.USER_NOT_FOUND));
 
-        if (!user.getPassword().equals(request.password())) {
+        if (!passwordEncoder.matches(request.password(), user.getPassword())) {
             throw UserNotFoundException.EXCEPTION;
         }
 
