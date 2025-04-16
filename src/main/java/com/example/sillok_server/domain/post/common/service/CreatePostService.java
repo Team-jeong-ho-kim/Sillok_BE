@@ -38,7 +38,7 @@ public class CreatePostService {
                     return trafficRepository.save(newTraffic);
                 });
 
-        traffic.click();
+        traffic.create();
 
         postRepository.save(Post.builder()
                 .title(request.title())
