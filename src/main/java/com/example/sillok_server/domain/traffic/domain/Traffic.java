@@ -17,6 +17,8 @@ public class Traffic {
     @Version
     private Long version;
 
+    private int createCount = 0;
+
     private int clickCount = 0;
 
     private int visitCount = 0;
@@ -27,5 +29,9 @@ public class Traffic {
 
     public void visit() {
         visitCount++;
+    }
+
+    public void create() {
+        createCount++;
     }
 }
