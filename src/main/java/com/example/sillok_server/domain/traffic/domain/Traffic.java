@@ -17,9 +17,15 @@ public class Traffic {
     @Version
     private Long version;
 
-    private int shareCount = 0;
+    private int clickCount = 0;
+
+    private int visitCount = 0;
 
     public void click() {
-        shareCount++;
+        clickCount++;
+    }
+
+    public void visit() {
+        visitCount++;
     }
 }
