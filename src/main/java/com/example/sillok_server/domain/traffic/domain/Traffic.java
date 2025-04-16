@@ -19,7 +19,7 @@ public class Traffic {
 
     private int shareCount = 0;
 
-    public void share() {
+    public void click() {
         shareCount++;
     }
 }

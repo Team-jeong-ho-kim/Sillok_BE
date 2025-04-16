@@ -28,7 +28,7 @@ public class QueryPostLinkService {
                     return trafficRepository.save(newTraffic);
                 });
 
-        traffic.share();
+        traffic.click();
 
         return new PostLinkResponse(post.getLink());
     }
