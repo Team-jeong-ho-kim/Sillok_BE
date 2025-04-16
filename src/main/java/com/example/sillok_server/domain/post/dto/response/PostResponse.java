@@ -1,5 +1,6 @@
 package com.example.sillok_server.domain.post.dto.response;
 
+import com.example.sillok_server.domain.post.domain.Post;
 import com.example.sillok_server.domain.post.domain.enums.Category;
 import com.querydsl.core.annotations.QueryProjection;
 import io.swagger.v3.oas.annotations.media.Schema;

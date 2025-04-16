@@ -4,6 +4,8 @@ import com.example.sillok_server.domain.post.domain.Post;
 import com.example.sillok_server.domain.post.domain.repository.PostRepository;
 import com.example.sillok_server.domain.post.dto.response.PostLinkResponse;
 import com.example.sillok_server.domain.post.exception.PostNotFoundException;
+import com.example.sillok_server.domain.traffic.domain.Traffic;
+import com.example.sillok_server.domain.traffic.domain.repository.TrafficRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,11 +15,20 @@ import org.springframework.transaction.annotation.Transactional;
 public class QueryPostLinkService {
 
     private final PostRepository postRepository;
+    private final TrafficRepository trafficRepository;
 
-    @Transactional(readOnly = true)
+    @Transactional
     public PostLinkResponse execute(Long postId) {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> PostNotFoundException.EXCEPTION);
+
+        Traffic traffic = trafficRepository.findById(1L)
+                .orElseGet(() -> {
+                    Traffic newTraffic = new Traffic();
+                    return trafficRepository.save(newTraffic);
+                });
+
+        traffic.share();
 
         return new PostLinkResponse(post.getLink());
     }
