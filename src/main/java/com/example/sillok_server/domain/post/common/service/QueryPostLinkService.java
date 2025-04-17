@@ -22,13 +22,13 @@ public class QueryPostLinkService {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> PostNotFoundException.EXCEPTION);
 
-        Traffic traffic = trafficRepository.findById(1L)
-                .orElseGet(() -> {
-                    Traffic newTraffic = new Traffic();
-                    return trafficRepository.save(newTraffic);
-                });
-
-        traffic.click();
+//        Traffic traffic = trafficRepository.findById(1L)
+//                .orElseGet(() -> {
+//                    Traffic newTraffic = new Traffic();
+//                    return trafficRepository.save(newTraffic);
+//                });
+//
+//        traffic.click();
 
         return new PostLinkResponse(post.getLink());
     }
