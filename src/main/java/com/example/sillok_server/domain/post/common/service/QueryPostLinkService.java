@@ -22,9 +22,7 @@ public class QueryPostLinkService {
     public PostLinkResponse execute(Long postId) {
         Post post = postRepository.findById(postId)
             .orElseThrow(() -> PostNotFoundException.EXCEPTION);
-
-        trafficService.click();
-
+        
         return new PostLinkResponse(post.getLink());
     }
 
