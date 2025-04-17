@@ -8,7 +8,6 @@ import com.example.sillok_server.domain.post.domain.enums.Category;
 import com.example.sillok_server.domain.post.dto.request.PostRequest;
 import com.example.sillok_server.domain.post.dto.response.PostLinkResponse;
 import com.example.sillok_server.domain.post.dto.response.PostResponse;
-import com.example.sillok_server.domain.traffic.service.TrafficService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,7 +26,6 @@ public class PostController implements PostControllerDocs {
     private final QueryPostsService queryPostsService;
     private final QueryPostsByCategoryService queryPostsByCategoryService;
     private final QueryPostLinkService queryPostLinkService;
-    private final TrafficService trafficService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
@@ -48,7 +46,6 @@ public class PostController implements PostControllerDocs {
     @GetMapping("/{post-id}")
     @ResponseStatus(HttpStatus.OK)
     public PostLinkResponse queryLink(@PathVariable("post-id") Long postId) {
-        trafficService.click();
         return queryPostLinkService.execute(postId);
     }
 
