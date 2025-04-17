@@ -20,4 +20,15 @@ public class TrafficService {
                 });
         traffic.visit();
     }
+
+    @Transactional
+    public void click() {
+        Traffic traffic = trafficRepository.findById(1L)
+                .orElseGet(() -> {
+                    Traffic newTraffic = new Traffic();
+                    return trafficRepository.save(newTraffic);
+                });
+
+        traffic.click();
+    }
 }
